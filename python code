@@ -1,0 +1,45 @@
+movies=[]
+def add_movie():
+    title=input("enter the title name : ")
+    director=input("enter the director name : ")
+    year=input("enter the year in which the movie has released : ")
+    movies.append({
+        "title":title,
+        'director':director,
+        'year':year
+
+
+
+    })
+
+
+def show_movie():
+    for movie in movies:
+        print(f"Title: {movie['title']}")
+        print(f"Director: {movie['director']}")
+        print(f"Release year: {movie['year']}")
+
+def find_movie():
+    search_title=input("enter the movie name you want to search for : ")
+    for movie in movies:
+        if movie["title"] == search_title:
+            print(movie)
+
+def menu():
+    selection=input("\nEnter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie by title, or 'q' to quit: ")
+    while selection != 'q':
+        if selection==('a'or 'A' or 'l'or 'L' or 'f'or'F'):
+            if selection=='a' or 'A':
+                add_movie()
+            if selection==('l' or 'L'):
+                show_movie()
+            if selection==('f' or 'F'):
+                find_movie()
+        else:
+            print("the command entered is worng try again")
+        selection=input("\nEnter 'a' to add a movie, 'l' to see your movies, 'f' to find a movie by title, or 'q' to quit: ")
+
+
+
+
+menu()
